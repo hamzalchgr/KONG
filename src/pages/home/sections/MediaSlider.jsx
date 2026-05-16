@@ -78,8 +78,9 @@ const MediaSlider = ({ h2, mediaType, list }) => {
             aria-label="Go to previous slide"
             className={clsx(
               "w-10 h-10 rounded-full bg-[#10101090] hover:bg-black transition flex-center",
-              slideIndex === 0 ? "hidden" : "md:flex-center",
+              slideIndex === 0 ? "cursor-not-allowed bg-gray-8b hover:bg-gray-8b" : "cursor-pointer",
             )}
+            disabled={slideIndex === 0}
             onClick={() => setSlideIndex((prev) => prev - 1)}
           >
             <ArrowLeft size={20} />
@@ -90,9 +91,10 @@ const MediaSlider = ({ h2, mediaType, list }) => {
             className={clsx(
               "w-10 h-10 rounded-full bg-[#10101090] hover:bg-black transition flex-center",
               slideIndex === mediaList.length / 5 - 1 
-                ? "hidden"
-                : "md:flex-center",
+                ? "bg-gray-8b hover:bg-gray-8b cursor-not-allowed"
+                : "cursor-pointer",
             )}
+            disabled={slideIndex === mediaList.length / 5 - 1}
             onClick={() => setSlideIndex((prev) => prev + 1)}
           >
             <ArrowRight size={20} />
