@@ -2,10 +2,11 @@ import { Routes, Route } from "react-router-dom"
 
 import Home from "./pages/home/Home"
 // import Category from "./pages/category/Category"
-// import Movie from "./pages/Movie/Movie"
-// import Show from "./pages/TV/Show"
+import Movie from "./pages/movie/Movies"
+
 
 import Layout from "./components/layout/Layout"
+import TvShows from "./pages/tv/TvShows"
 
 const App = () => {
   return (
@@ -13,9 +14,11 @@ const App = () => {
       <Routes>
         <Route path="/" element={<Layout />}>
         <Route index element={<Home />} />
+        <Route path="/movie" element={<Movie />} />
+        <Route path="/show" element={<TvShows />} />
         {/* <Route path="/category" element={<Category />} />
-        <Route path="/show" element={<Show />} />
-        <Route path="/movie" element={<Movie />} /> */}
+         />
+         */}
         </Route>
       </Routes>
     </div>

@@ -38,7 +38,7 @@ const MediaSlider = ({ h2, mediaType, list }) => {
       }
 
       const result = await res.json();
-      if (result.ressponse === false) {
+      if (result.response === false) {
         setErrorMessage(result.Error || "Failed to fetch data");
         setMediaList([]);
         return;
@@ -46,7 +46,7 @@ const MediaSlider = ({ h2, mediaType, list }) => {
 
       setMediaList(result.results);
     } catch (error) {
-      if (error.message !== "AbortError") {
+      if (error.name !== "AbortError") {
         setErrorMessage(error.message);
       }
     } finally {

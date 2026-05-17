@@ -6,7 +6,7 @@ const Home = () => {
     <div>
       <Hero />
       <MediaSlider h2="Popular Movies" mediaType="movie" list="popular" />
-      <MediaSlider h2="Popular Movies" mediaType="tv" list="popular" />
+      <MediaSlider h2="Popular TV Shows" mediaType="tv" list="popular" />
     </div>
   );
 };
